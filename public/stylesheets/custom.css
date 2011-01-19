@@ -3,7 +3,7 @@
 }
 
 body {
-  background: #BDEDFF;
+  background: #cff;
 }
 
 header {
@@ -41,6 +41,7 @@ a:hover {
 a:visited {
   color: #069;
 }
+
 
 /* Navigation */
 

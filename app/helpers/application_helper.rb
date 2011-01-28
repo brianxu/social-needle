@@ -10,4 +10,8 @@ module ApplicationHelper
     end
   end
 
+  def logo
+    image_tag("logo.png", :alt => "Social Needle", :class => "round")
+  end
+
 end

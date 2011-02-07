@@ -17,7 +17,8 @@ class User < ActiveRecord::Base
   attr_accessor :password
   attr_accessible :name, :email, :password, :password_confirmation
 
-  has_many :microposts, :dependent => :destroy
+  has_many :posts, :dependent => :destroy
+  has_many :comments, :dependent => :destroy
 
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
@@ -52,7 +53,7 @@ class User < ActiveRecord::Base
   end
 
   def feed
-    Micropost.all
+    Post.all
   end
 
   private

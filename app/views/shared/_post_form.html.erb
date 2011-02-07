@@ -1,4 +1,4 @@
-<%= form_for @micropost do |f| %>
+<%= form_for @post do |f| %>
   <%= render 'shared/error_messages', :object => f.object %>
   <div class="title">
     <%= f.text_area :title, :cols => 60, :rows => 1 %>

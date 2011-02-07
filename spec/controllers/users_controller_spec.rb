@@ -72,10 +72,10 @@ describe UsersController do
       response.should have_selector("h1>img", :class => "gravatar")
     end
 
-    it "should show the user's microposts" do
-      mp1 = Factory(:micropost, :user => @user, :title => "fooTitle",
+    it "should show the user's posts" do
+      mp1 = Factory(:post, :user => @user, :title => "fooTitle",
                     :content => "fooContent")
-      mp2 = Factory(:micropost, :user => @user, :title => "fooTitle",
+      mp2 = Factory(:post, :user => @user, :title => "fooTitle",
                     :content => "fooContent")
       get :show, :id => @user
       response.should have_selector("span.title", :content => mp1.title)

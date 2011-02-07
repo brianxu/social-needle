@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe MicropostsController do
+describe PostsController do
   render_views
 
   describe "access control" do
@@ -28,14 +28,14 @@ describe MicropostsController do
         @attr = { :title => "", :content => "" }
       end
 
-      it "should not create a micropost" do
+      it "should not create a post" do
         lambda do
-          post :create, :micropost => @attr
-        end.should_not change(Micropost, :count)
+          post :create, :post => @attr
+        end.should_not change(Post, :count)
       end
 
       it "should render the home page" do
-        post :create, :micropost => @attr
+        post :create, :post => @attr
         response.should render_template('pages/home')
       end
     end
@@ -46,20 +46,20 @@ describe MicropostsController do
         @attr = { :title => "fooTitle", :content => "fooContent" }
       end
 
-      it "should create a micropost" do
+      it "should create a post" do
         lambda do
-          post :create, :micropost => @attr
-        end.should change(Micropost, :count).by(1)
+          post :create, :post => @attr
+        end.should change(Post, :count).by(1)
       end
 
       it "should redirect to the home page" do
-        post :create, :micropost => @attr
+        post :create, :post => @attr
         response.should redirect_to(root_path)
       end
 
       it "should have a flash message" do
-        post :create, :micropost => @attr
-        flash[:success].should =~ /micropost created/i
+        post :create, :post => @attr
+        flash[:success].should =~ /post created/i
       end
     end
   end

@@ -1,1 +1,7 @@
 Sample application in Ruby on Rails 3 Tutorial. 
+
+To run:
+	bundle install
+	rake db:migrate
+	rake db:test:prepare
+

@@ -2,14 +2,18 @@ class CommentsController < ApplicationController
   before_filter :authenticate, :only => [:create, :destory]
 
   def create
-    @comment = current_user.comments.build(params[:comment])
+    @comment = current_user.comments.build!(:content => params[:comment][:content],
+                                            :post_id = @post.id)
     if @comment.save
       flash[:success] = "Comments create."
-      #should redirect to post page
-      redirect_to root_path
+      redirect_to post_path(@post)
     else
-      render 'pages/home'
+      flash[:failure] = "Failed to create comments."
+      redirect_to post_path(@post)
     end
+  end
+
+  def destroy
   end
 
 end

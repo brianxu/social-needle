@@ -1,11 +1,13 @@
-<tr>
-  <table class="showpost">
+<table class="showpost">
+  <tr>
     <td class="gravatar">
       <h3>
         <%= gravatar_for @user , :size => 30 %><br />
         <%= link_to @user.name, user_path(@user) %>
       </h3>
     </td>
+  </tr>
+  <tr>
     <td class="post">
       <span class="title"><%= @post.title %></span><br />
       <span class="content"><%= @post.content %></span>
@@ -13,7 +15,22 @@
         Posted <%= time_ago_in_words(@post.created_at) %> ago.
       </span>
     </td>
-  </table>
+  </tr>
+  <tr>
+    <h3> Comment </h3><br />
+    <td class="comment_form">
+      <%= render 'shared/comment_form' %>
+    </td>
+  </tr>
+  <tr>
+    <td class="comment">
+      <% unless @post.comments.empty? %>
+        <table class="comments" summary="Post comments">
+          <%= render @comments %>
+        </table>
+        <%= will_paginate @comments %>
+      <% end %>
+    </td>
+  </tr>
   <%= link_to "<- Back" , :back %> 
-</tr>
-
+</table>

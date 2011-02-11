@@ -8,7 +8,7 @@ describe Comment do
                                 :content => "fooContent")
     @attr = { 
       :content => "this is a comment",
-      :post => @post
+      :post_id => @post.id
     }
   end
 
@@ -38,6 +38,43 @@ describe Comment do
     it "should have the right associated post" do
       @comment.post_id.should == @post.id
       @comment.post.should == @post
+    end
+  end
+
+  describe "validations" do
+
+    it "should require a user id" do
+      Comment.new(@attr).should_not be_valid
+    end
+
+    it "should require a post id" do
+      @user.comments.build(:content => "foo").should_not be_valid
+    end
+
+    it "should require nonblank content" do
+      @user.comments.build(:content => " ").should_not be_valid
+    end
+  end
+
+  describe "POST 'create'" do
+
+    describe "failure" do
+      
+      before(:each) do
+        @attr = { :content => "" }
+      end
+
+      #it "should not create a comment" do
+        #lambda do
+          #post :create, :comment => @attr
+        #end.should_not change(Comment, :count)
+      #end
+
+      #######
+      # TODO
+      #
+      # #####
+      
     end
   end
 end

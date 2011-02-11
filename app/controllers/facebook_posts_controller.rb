@@ -1,0 +1,3 @@
+class FacebookPostsController < PostsController
+
+end

@@ -7,7 +7,7 @@
       </h1>
       <% unless @user.posts.empty? %>
         <table class="posts" summary="User posts">
-          <%= render @posts %>
+          <%= render(:partial => "shared/post", :object => @posts) %>
         </table>
         <%= will_paginate @posts %>
       <% end %>

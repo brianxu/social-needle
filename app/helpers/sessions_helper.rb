@@ -11,6 +11,10 @@ module SessionsHelper
   def current_user
     @current_user ||= user_from_remember_token
   end
+  
+  #def current_post
+    #@current_post = Post.find(params[:id])
+  #end
 
   def signed_in?
     !current_user.nil?

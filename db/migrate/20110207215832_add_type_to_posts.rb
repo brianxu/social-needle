@@ -4,6 +4,6 @@ class AddTypeToPosts < ActiveRecord::Migration
   end
 
   def self.down
-    remove_column :posts, :type
+    remove_column :posts
   end
 end

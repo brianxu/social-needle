@@ -21,9 +21,17 @@ namespace :db do
     User.all(:limit => 6).each do |user|
       50.times do
         user.posts.create!(:title => Faker::Lorem.sentence(2),
-                                :content => Faker::Lorem.sentence(5))
+                           :content => Faker::Lorem.sentence(5))
       end
     end
+
+    User.all(:limit => 6).each do |user|
+      10.times do
+        user.comments.create!(:content => Faker::Lorem.sentence(8),
+                              :post_id => 1)
+      end
+    end
+                              
   end
 end
 

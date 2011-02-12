@@ -4,8 +4,12 @@ SampleApp::Application.routes.draw do
 
   resources :users
   resources :sessions, :only => [:new, :create, :destroy]
-  resources :posts
   resources :facebook_posts
+
+  resources :posts do
+    resources :comments
+  end
+
 
   match '/signup', :to => 'users#new'
   match '/signin', :to => 'sessions#new'
@@ -16,7 +20,7 @@ SampleApp::Application.routes.draw do
   match '/help', :to => 'pages#help'
   
   match '/facebook', :to => 'facebook#connect'
-  
+
   root :to => 'pages#home'
 
   # The priority is based upon order of creation:

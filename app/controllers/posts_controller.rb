@@ -16,6 +16,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @title = @post.title
     @user = @post.user
+    @comments = @post.comments.paginate(:page => params[:page])
   end
 
   def destroy

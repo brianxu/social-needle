@@ -3,7 +3,7 @@
 }
 
 body {
-  background: #CFECEC;
+  /*background: #CFECEC;*/
   background-image: url("http://static.v2ex.com/tiles/imneway.jpg");
 }
 
@@ -210,13 +210,13 @@ table.posts tr {
 }
 
 table.posts tr td.gravatar {
-  border-top: 1px solid #ccc;
+  /*border-top: 1px solid #ccc;*/
   vertical-align: top;
   width: 50px;
 }
 
 table.posts tr td.post {
-  border-top: 1px solid #ccc;
+  /*border-top: 1px solid #ccc;*/
   vertical-align: top;
   padding-top: 10px;
 }
@@ -234,14 +234,14 @@ table.showpost td.gravatar {
 }
 
 table.showpost tr td.post span.title {
-  display: block;
+  /*display: block;*/
   font-size: 150%;
   color: #000;
 }
 
 table.showpost td.post {
   width: 80%;
-  border-top: 1px solid #ccc;
+  /*border-top: 1px solid #ccc;*/
   vertical-align: top;
   padding-top: 10px;
 }
@@ -251,6 +251,20 @@ table.showpost td.post span.timestamp {
   font-size: 85%;
   color: #666;
 }
+
+table.showpost td.comment {
+  width: 80%;
+  border-top: 1px solid #ccc;
+  vertical-align: top;
+  padding-top: 10px;
+}
+
+table.showpost td.comment span.timestamp {
+  display: block;
+  font-size: 85%;
+  color: #666;
+}
+
 div.user_info img {
   padding-right: 0.1em;
 }

@@ -4,7 +4,8 @@
     <span class="timestamp">
       Posted by 
       <%= link_to feed_item.user.name, feed_item.user %>
-      <%= time_ago_in_words(feed_item.created_at) %> ago.
+      <%= time_ago_in_words(feed_item.created_at) %> ago.<br />
+      <%= feed_item.comments.count %> comments.
     </span>
   </td>
 </tr>

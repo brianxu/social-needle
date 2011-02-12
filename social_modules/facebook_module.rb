@@ -3,7 +3,7 @@ require 'rubygems'
 require 'json'
 require 'net/https'
 
-require "../../config/environment.rb"
+require "../config/environment.rb"
 
 class FacebookModule < SocialModule
 public

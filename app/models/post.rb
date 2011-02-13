@@ -12,7 +12,7 @@
 #
 
 class Post < ActiveRecord::Base
-  attr_accessible :title, :content, :type
+  attr_accessible :title, :content, :id
 
   belongs_to :user
   has_many :comments

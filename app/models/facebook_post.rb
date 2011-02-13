@@ -1,2 +1,3 @@
 class FacebookPost < Post
+
 end

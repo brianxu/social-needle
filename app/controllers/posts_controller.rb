@@ -17,6 +17,7 @@ class PostsController < ApplicationController
     @title = @post.title
     @user = @post.user
     @comments = @post.comments.paginate(:page => params[:page])
+    render "shared/posts/_show"
   end
 
   def destroy

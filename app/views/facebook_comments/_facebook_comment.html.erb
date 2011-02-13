@@ -1,0 +1,10 @@
+<tr>
+  <td class="comment">
+    <span class="content"><%= facebook_comment.content %></span>
+    <span class="timestamp">
+      Posted by
+      <%= link_to facebook_comment.user.name, facebook_comment.user %>
+      <%= time_ago_in_words(facebook_comment.created_at) %> ago.
+    </span>
+  </td>
+</tr>

@@ -2,7 +2,8 @@
   <td class="post">
     <span class="title"><%= link_to post.title, post %></span>
     <span class="timestamp">
-      Posted <%= time_ago_in_words(post.created_at) %> ago.
+      Posted <%= time_ago_in_words(post.created_at) %> ago. </br>
+			<%= pluralize(post.comments.count, "comment") %>
     </span>
   </td>
 </tr>

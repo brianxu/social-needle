@@ -20,6 +20,7 @@ class User < ActiveRecord::Base
   has_many :posts, :dependent => :destroy
   has_many :comments, :dependent => :destroy
   has_many :facebook_posts, :dependent => :destroy
+  has_many :facebook_comments, :dependent => :destroy
 
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 

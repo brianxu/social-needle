@@ -1,0 +1,2 @@
+class FacebookCommentsController < CommentsController
+end
